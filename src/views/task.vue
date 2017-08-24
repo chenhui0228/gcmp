@@ -190,8 +190,7 @@
                         <el-select v-model="taskForm.policy_id" placeholder="请选择任务执行策略">
                             <el-option v-for="policy in policies"  :label="policy.name" :value="policy.id" :key="policy.id"></el-option>
                         </el-select>
-                        <el-alert type="info" show-icon v-for="policy in policies" v-if="taskForm.policy_id == policy.id"
-                                  title="策略描述" :description="policy.description" :key="policy.description" style="background-color:#bbb;line-height: 20px; margin-top: 10px"></el-alert>
+                        <div><span v-for="policy in policies" v-if="taskForm.policy_id == policy.id"style="">{{ policy.description }}</span></div>
                     </el-form-item>
                     <el-form-item label="选择作业机" prop="worker_id" required>
                         <el-select v-model="taskForm.worker_id" placeholder="请选择任务作业机">
